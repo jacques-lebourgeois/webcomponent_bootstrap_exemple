@@ -44,10 +44,41 @@ class IsolatedCard extends HTMLElement {
         border-radius: 0.5rem;
         overflow: hidden;
       }
-      /* bouton local (si besoin d'override) */
+
+      /* Assurer la visibilité du bouton : règles locales plus spécifiques */
+      button.btn,
+      .btn {
+        color: #ffffff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+      }
+
+      /* Variante primaire */
+      button.btn.btn-primary,
+      .btn.btn-primary {
+        color: #ffffff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+      }
+
+      /* Classe utilitaire pour overrides locaux (utilisée dans le template) */
       .btn--local {
-        --btn-bg: #0d6efd;
-        color: #fff;
+        color: #ffffff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+      }
+
+      /* Petit effet actif */
+      button.btn:active,
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      /* Si un thème ou variable interfère, on ajoute une règle plus spécifique */
+      :host button.btn.btn-primary.btn--local {
+        color: #ffffff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
       }
     `;
 
