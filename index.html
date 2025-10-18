@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Accueil - Boosted + Web Component isolé</title>
 
-  <!-- Boosted 5.2.0 (CDN) pour la page principale -->
-  <!-- Si tu préfères Bootstrap, remplace par la CDN Bootstrap correspondante -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@orange-opensource/boosted@5.2.0/dist/css/boosted.min.css" integrity="" crossorigin="anonymous">
+  <!-- Boosted 6.2.0 (CDN) pour la page principale -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@orange-opensource/boosted@6.2.0/dist/css/boosted.min.css" crossorigin="anonymous">
 
   <!-- style global léger -->
   <link rel="stylesheet" href="/src/styles/global.css">
@@ -26,10 +25,26 @@
   </header>
 
   <main class="container">
-    <h1 class="mb-4">Page d'accueil (Boosted 5.2.0)</h1>
+    <h1 class="mb-4">Page d'accueil (Boosted 6.2.0)</h1>
 
     <section class="mb-5">
       <p>La zone ci‑dessous affiche un Web Component isolé via Shadow DOM. Le CSS de la page (Boosted) ne devrait pas affecter le rendu intérieur du composant.</p>
+
+      <!-- Dropdown button Boosted 6.2.0 -->
+      <div class="mb-3">
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="pageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu actions
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="pageDropdown">
+            <li><a class="dropdown-item" href="#">Action 1</a></li>
+            <li><a class="dropdown-item" href="#">Action 2</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Autre action</a></li>
+          </ul>
+        </div>
+      </div>
+
       <!-- Le composant est importé et utilisé depuis src/main.js -->
       <isolated-card title="Titre du composant" subtitle="Sous-titre exemple"></isolated-card>
     </section>
@@ -44,8 +59,8 @@
     <div class="container">© 2025 — Exemple</div>
   </footer>
 
-  <!-- Boosted JS (optionnel) -->
-  <script src="https://cdn.jsdelivr.net/npm/@orange-opensource/boosted@5.2.0/dist/js/boosted.bundle.min.js" integrity="" crossorigin="anonymous" defer></script>
+  <!-- Boosted JS (nécessaire aux composants interactifs comme dropdown) -->
+  <script src="https://cdn.jsdelivr.net/npm/@orange-opensource/boosted@6.2.0/dist/js/boosted.bundle.min.js" crossorigin="anonymous" defer></script>
 
   <!-- point d'entrée de l'app -->
   <script type="module" src="/src/main.js"></script>
