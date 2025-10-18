@@ -1,0 +1,18 @@
+{
+  "name": "stencil-bootstrap-multi-version-example",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "stencil build --dev --watch --serve",
+    "build": "stencil build",
+    "postinstall": "node ./scripts/copy-bootstrap-css.js"
+  },
+  "devDependencies": {
+    "@stencil/core": "^3.0.0"
+  },
+  "dependencies": {
+    "bootstrap52": "npm:bootstrap@5.2.0",
+    "bootstrap538": "npm:bootstrap@5.3.8",
+    "@popperjs/core": "^2.11.8"
+  }
+}
