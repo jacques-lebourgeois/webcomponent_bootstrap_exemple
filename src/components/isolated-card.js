@@ -38,7 +38,19 @@ class IsolatedCard extends HTMLElement {
         max-width: 540px;
         margin: 0.5rem 0;
         font-family: inherit;
+
+        /* Fournir les variables Bootstrap/Boosted attendues à l'intérieur du Shadow DOM */
+        --bs-btn-color: #fff;
+        --bs-btn-bg: #0d6efd;
+        --bs-btn-border-color: #0d6efd;
+        --bs-btn-hover-bg: #0b5ed7;
+        --bs-btn-hover-border-color: #0a58ca;
+
+        /* variables complémentaires utiles */
+        --bs-body-bg: #ffffff;
+        --bs-body-color: #212529;
       }
+
       /* petits ajustements locaux supplémentaires */
       .card {
         border-radius: 0.5rem;
@@ -48,24 +60,24 @@ class IsolatedCard extends HTMLElement {
       /* Assurer la visibilité du bouton : règles locales plus spécifiques */
       button.btn,
       .btn {
-        color: #ffffff;
-        background-color: #0d6efd;
-        border-color: #0d6efd;
+        color: var(--bs-btn-color);
+        background-color: var(--bs-btn-bg);
+        border-color: var(--bs-btn-border-color);
       }
 
       /* Variante primaire */
       button.btn.btn-primary,
       .btn.btn-primary {
-        color: #ffffff;
-        background-color: #0d6efd;
-        border-color: #0d6efd;
+        color: var(--bs-btn-color);
+        background-color: var(--bs-btn-bg);
+        border-color: var(--bs-btn-border-color);
       }
 
       /* Classe utilitaire pour overrides locaux (utilisée dans le template) */
       .btn--local {
-        color: #ffffff;
-        background-color: #0d6efd;
-        border-color: #0d6efd;
+        color: var(--bs-btn-color);
+        background-color: var(--bs-btn-bg);
+        border-color: var(--bs-btn-border-color);
       }
 
       /* Petit effet actif */
@@ -76,9 +88,9 @@ class IsolatedCard extends HTMLElement {
 
       /* Si un thème ou variable interfère, on ajoute une règle plus spécifique */
       :host button.btn.btn-primary.btn--local {
-        color: #ffffff;
-        background-color: #0d6efd;
-        border-color: #0d6efd;
+        color: var(--bs-btn-color);
+        background-color: var(--bs-btn-bg);
+        border-color: var(--bs-btn-border-color);
       }
     `;
 
