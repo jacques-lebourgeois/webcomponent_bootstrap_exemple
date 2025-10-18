@@ -5,7 +5,8 @@ class IsolatedCard extends HTMLElement {
   static async _loadBoostedCss() {
     if (IsolatedCard._boostedCss) return IsolatedCard._boostedCss;
 
-    const url = 'https://cdn.jsdelivr.net/npm/@orange-opensource/boosted@5.3.7/dist/css/boosted.min.css';
+    // Charger Boosted 5.3.7 via unpkg (change si tu veux un autre CDN)
+    const url = 'https://unpkg.com/@orange-opensource/boosted@5.3.7/dist/css/boosted.min.css';
     const res = await fetch(url, { cache: 'force-cache' });
     if (!res.ok) throw new Error(`Impossible de charger Boosted CSS (${res.status})`);
     IsolatedCard._boostedCss = await res.text();
