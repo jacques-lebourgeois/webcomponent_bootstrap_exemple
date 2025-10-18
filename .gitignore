@@ -1,0 +1,15 @@
+# Stencil build output
+dist/
+# Node modules
+node_modules/
+# Logs
+logs/
+*.log
+# Dependency directories
+jspm_packages/
+# IDE specific files
+.vscode/
+.idea/
+.DS_Store
+# Environment variables
+.env
