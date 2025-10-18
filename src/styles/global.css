@@ -1,0 +1,5 @@
+/* styles globaux de la page (non appliqués à l'intérieur du shadow DOM du composant) */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #f8f9fa;
+}

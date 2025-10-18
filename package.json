@@ -1,18 +1,15 @@
 {
-  "name": "stencil-bootstrap-multi-version-example",
+  "name": "boosted-webcomponent-example",
   "version": "1.0.0",
-  "private": true,
+  "description": "Exemple : page d'accueil en Boosted 5.2.0 et un web component isolé (Shadow DOM)",
   "scripts": {
-    "start": "stencil build --dev --watch --serve",
-    "build": "stencil build",
-    "postinstall": "node ./scripts/copy-bootstrap-css.js"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@stencil/core": "^3.0.0"
+    "vite": "^5.0.0"
   },
-  "dependencies": {
-    "bootstrap52": "npm:bootstrap@5.2.0",
-    "bootstrap538": "npm:bootstrap@5.3.8",
-    "@popperjs/core": "^2.11.8"
-  }
+  "author": "jacques-lebourgeois",
+  "license": "MIT"
 }
