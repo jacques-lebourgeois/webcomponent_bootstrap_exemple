@@ -1,68 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Accueil - Boosted + Web Component isolé</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Accueil - Boosted + Web Component isolé</title>
 
-  <!-- Boosted 6.2.0 (CDN) pour la page principale -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@orange-opensource/boosted@6.2.0/dist/css/boosted.min.css" crossorigin="anonymous">
+    <!-- Boosted 5.2.0 (CDN via unpkg) pour la page principale -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@orange-opensource/boosted@5.2.0/dist/css/boosted.min.css"
+      crossorigin="anonymous"
+    />
 
-  <!-- style global léger -->
-  <link rel="stylesheet" href="/src/styles/global.css">
-</head>
-<body>
-  <header class="b-header py-3 mb-4 border-bottom">
-    <div class="container d-flex flex-wrap justify-content-between align-items-center">
-      <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-        <span class="fs-4">Mon site Boosted</span>
-      </a>
-      <nav class="nav">
-        <a class="nav-link active" href="#">Accueil</a>
-        <a class="nav-link" href="#">À propos</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <h1 class="mb-4">Page d'accueil (Boosted 6.2.0)</h1>
-
-    <section class="mb-5">
-      <p>La zone ci‑dessous affiche un Web Component isolé via Shadow DOM. Le CSS de la page (Boosted) ne devrait pas affecter le rendu intérieur du composant.</p>
-
-      <!-- Dropdown button Boosted 6.2.0 -->
-      <div class="mb-3">
-        <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" id="pageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-            Menu actions
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="pageDropdown">
-            <li><a class="dropdown-item" href="#">Action 1</a></li>
-            <li><a class="dropdown-item" href="#">Action 2</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Autre action</a></li>
-          </ul>
-        </div>
+    <!-- style global léger -->
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body>
+    <header class="b-header py-3 mb-4 border-bottom">
+      <div
+        class="container d-flex flex-wrap justify-content-between align-items-center"
+      >
+        <a
+          href="#"
+          class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none"
+        >
+          <span class="fs-4">Mon site Boosted</span>
+        </a>
+        <nav class="nav">
+          <a class="nav-link active" href="#">Accueil</a>
+          <a class="nav-link" href="#">À propos</a>
+        </nav>
       </div>
+    </header>
 
-      <!-- Le composant est importé et utilisé depuis src/main.js -->
-      <isolated-card title="Titre du composant" subtitle="Sous-titre exemple"></isolated-card>
-    </section>
+    <main class="container">
+      <h1 class="mb-4">Page d'accueil (Boosted 5.2.0)</h1>
 
-    <section>
-      <h2>Contenu principal</h2>
-      <p>Utilise les classes Boosted pour le contenu principal.</p>
-    </section>
-  </main>
+      <section class="mb-5">
+        <p>
+          La zone ci‑dessous affiche un Web Component isolé via Shadow DOM. Le
+          CSS de la page (Boosted) ne devrait pas affecter le rendu intérieur du
+          composant.
+        </p>
 
-  <footer class="b-footer mt-auto py-3 border-top">
-    <div class="container">© 2025 — Exemple</div>
-  </footer>
+        <!-- Dropdown button Boosted 5.2.0 -->
+        <div class="mb-3">
+          <div class="dropdown">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              type="button"
+              id="pageDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Menu actions
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="pageDropdown">
+              <li><a class="dropdown-item" href="#">Action 1</a></li>
+              <li><a class="dropdown-item" href="#">Action 2</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Autre action</a></li>
+            </ul>
+          </div>
+        </div>
 
-  <!-- Boosted JS (nécessaire aux composants interactifs comme dropdown) -->
-  <script src="https://cdn.jsdelivr.net/npm/@orange-opensource/boosted@6.2.0/dist/js/boosted.bundle.min.js" crossorigin="anonymous" defer></script>
+        <!-- Le composant est importé et utilisé depuis src/main.js -->
+        <isolated-card
+          title="Titre du composant"
+          subtitle="Sous-titre exemple"
+        ></isolated-card>
+      </section>
 
-  <!-- point d'entrée de l'app -->
-  <script type="module" src="/src/main.js"></script>
-</body>
+      <section>
+        <h2>Contenu principal</h2>
+        <p>Utilise les classes Boosted pour le contenu principal.</p>
+      </section>
+    </main>
+
+    <footer class="b-footer mt-auto py-3 border-top">
+      <div class="container">© 2025 — Exemple</div>
+    </footer>
+
+    <!-- Popper (nécessaire pour le positionnement des dropdowns) -->
+    <script
+      src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Boosted JS 5.2.0 (doit suivre Popper) -->
+    <script
+      src="https://unpkg.com/@orange-opensource/boosted@5.2.0/dist/js/boosted.bundle.min.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+
+    <!-- point d'entrée de l'app -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
